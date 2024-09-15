@@ -13,7 +13,7 @@
         }
 
         header {
-            background: #4a90e2;
+            background: #6b8e23;
             color: #ffffff;
             padding: 30px;
             text-align: center;
@@ -22,23 +22,23 @@
         nav {
             display: flex;
             justify-content: center;
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         nav a {
-            margin: 0 20px;
-            padding: 12px 25px;
+            margin: 0 15px;
+            padding: 12px 20px;
             text-decoration: none;
-            color: #4a90e2;
+            color: #6b8e23;
             background: #ffffff;
-            border: 2px solid #4a90e2;
+            border: 2px solid #6b8e23;
             border-radius: 30px;
             transition: background 0.3s, color 0.3s;
             font-size: 16px;
         }
 
         nav a:hover {
-            background: #4a90e2;
+            background: #6b8e23;
             color: #ffffff;
         }
 
@@ -49,37 +49,40 @@
 
         .translator-container h1 {
             font-size: 36px;
-            color: #4a90e2;
+            color: #6b8e23;
             margin-bottom: 20px;
         }
 
         .translator-container input {
             width: 80%;
             padding: 12px;
+            margin: 10px 0;
             border: 1px solid #ddd;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 16px;
-            margin-bottom: 20px;
         }
 
         .translator-container button {
-            background-color: #4a90e2;
+            background-color: #f76c6c;
             color: #ffffff;
             border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
+            padding: 12px 24px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
         }
 
         .translator-container button:hover {
-            background-color: #357abd;
+            background-color: #e55b5b;
         }
 
-        .result {
+        .translator-container .result {
             margin-top: 20px;
+            padding: 12px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             font-size: 18px;
-            color: #333;
         }
     </style>
 </head>
@@ -95,16 +98,15 @@
         <a href="about.html">About</a>
     </nav>
     <div class="translator-container">
-        <h1>Translate Text</h1>
-        <input type="text" id="text-input" placeholder="Enter text to translate">
+        <h1>Translator</h1>
+        <input type="text" placeholder="Enter text here">
         <button onclick="translateText()">Translate</button>
-        <div class="result" id="translation-result"></div>
+        <div class="result" id="result">Translation will appear here.</div>
     </div>
     <script>
         function translateText() {
-            const input = document.getElementById('text-input').value;
-            // Dummy translation logic
-            document.getElementById('translation-result').innerText = `Translated text: ${input}`;
+            // Dummy function for translation
+            document.getElementById('result').innerText = 'Translated text will appear here.';
         }
     </script>
 </body>
