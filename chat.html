@@ -13,111 +13,64 @@
         }
 
         header {
-            background: #4a90e2;
+            background: linear-gradient(135deg, #6b8e23, #f76c6c);
             color: #ffffff;
             padding: 30px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         nav {
             display: flex;
             justify-content: center;
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         nav a {
-            margin: 0 20px;
-            padding: 12px 25px;
-            text-decoration: none;
-            color: #4a90e2;
-            background: #ffffff;
-            border: 2px solid #4a90e2;
-            border-radius: 30px;
-            transition: background 0.3s, color 0.3s;
-            font-size: 16px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a:hover {
-            background: #4a90e2;
-            color: #ffffff;
+            background: #f2f2f2;
+            transform: translateY(-2px);
         }
 
         .chat-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            text-align: center;
             padding: 40px;
         }
 
-        .chat-box {
-            width: 80%;
-            max-width: 800px;
+        .chat-container h1 {
+            font-size: 36px;
+            color: #6b8e23;
+            margin-bottom: 20px;
+        }
+
+        .chat-container .fruit-card {
+            display: inline-block;
             background: #ffffff;
             padding: 20px;
-            border-radius: 10px;
+            margin: 10px;
+            border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            overflow-y: auto;
-            height: 400px;
+            width: 200px;
+            text-align: left;
         }
 
-        .chat-box h1 {
-            font-size: 28px;
-            color: #4a90e2;
-            margin-bottom: 20px;
+        .chat-container .fruit-card h2 {
+            font-size: 20px;
+            color: #6b8e23;
+            margin-bottom: 10px;
         }
 
-        .chat-message {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .chat-message p {
-            background: #e9ecef;
-            border-radius: 8px;
-            padding: 10px;
+        .chat-container .fruit-card p {
             font-size: 16px;
-            margin: 0;
-            max-width: 80%;
-        }
-
-        .user-message p {
-            background: #4a90e2;
-            color: #ffffff;
-            align-self: flex-end;
-        }
-
-        .input-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            max-width: 800px;
-        }
-
-        .input-container input {
-            flex: 1;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-
-        .input-container button {
-            background-color: #4a90e2;
-            color: #ffffff;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .input-container button:hover {
-            background-color: #357abd;
+            color: #666;
         }
     </style>
 </head>
@@ -133,47 +86,16 @@
         <a href="about.html">About</a>
     </nav>
     <div class="chat-container">
-        <div class="chat-box" id="chat-box">
-            <div class="chat-message">
-                <p>Welcome! How can I assist you today?</p>
-            </div>
+        <h1>Chat with Our Bot</h1>
+        <div class="fruit-card">
+            <h2>Apple</h2>
+            <p>Apples are nutritious and come in various types and flavors.</p>
         </div>
-        <div class="input-container">
-            <input type="text" id="chat-input" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
+        <div class="fruit-card">
+            <h2>Banana</h2>
+            <p>Bananas are rich in potassium and have a sweet taste.</p>
         </div>
+        <!-- Add more fruit cards as needed -->
     </div>
-    <script>
-        function sendMessage() {
-            const input = document.getElementById('chat-input');
-            const chatBox = document.getElementById('chat-box');
-            const message = input.value.trim();
-
-            if (message) {
-                // Display user message
-                const userMessage = document.createElement('div');
-                userMessage.className = 'chat-message user-message';
-                userMessage.innerHTML = `<p>${message}</p>`;
-                chatBox.appendChild(userMessage);
-
-                // Clear input
-                input.value = '';
-
-                // Scroll to bottom
-                chatBox.scrollTop = chatBox.scrollHeight;
-
-                // Simulate bot response
-                setTimeout(() => {
-                    const botMessage = document.createElement('div');
-                    botMessage.className = 'chat-message';
-                    botMessage.innerHTML = `<p>I'm here to help! You said: "${message}"</p>`;
-                    chatBox.appendChild(botMessage);
-
-                    // Scroll to bottom
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                }, 1000);
-            }
-        }
-    </script>
 </body>
 </html>
