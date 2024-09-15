@@ -13,70 +13,85 @@
         }
 
         header {
-            background: #4a90e2;
+            background: linear-gradient(135deg, #6b8e23, #f76c6c);
             color: #ffffff;
             padding: 30px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         nav {
             display: flex;
             justify-content: center;
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         nav a {
-            margin: 0 20px;
-            padding: 12px 25px;
+            margin: 0 15px;
+            padding: 12px 20px;
             text-decoration: none;
             color: #ffffff;
-            background: #4a90e2;
+            background: #6b8e23;
+            border: 2px solid #6b8e23;
             border-radius: 30px;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
             font-size: 16px;
+            font-weight: bold;
         }
 
         nav a:hover {
-            background: #357abd;
-            transform: scale(1.05);
+            background: #f76c6c;
+            color: #ffffff;
+            transform: translateY(-3px);
         }
 
         .content {
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             padding: 40px;
         }
 
-        .content h2 {
-            font-size: 32px;
-            color: #4a90e2;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            font-size: 18px;
-            color: #666;
-        }
-
         .service {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background: #ffffff;
-            padding: 25px;
+            padding: 20px;
             margin: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            width: 200px;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service h2 {
+            color: #6b8e23;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .service p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         .service a {
-            display: block;
-            margin-top: 15px;
-            color: #4a90e2;
+            color: #f76c6c;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
+            transition: color 0.3s;
         }
 
         .service a:hover {
+            color: #d64f4f;
             text-decoration: underline;
         }
     </style>
