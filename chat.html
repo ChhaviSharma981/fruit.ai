@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - fruit.ai</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #4a90e2;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        nav a {
+            margin: 0 20px;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: #4a90e2;
+            background: #ffffff;
+            border: 2px solid #4a90e2;
+            border-radius: 30px;
+            transition: background 0.3s, color 0.3s;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background: #4a90e2;
+            color: #ffffff;
+        }
+
+        .chat-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px;
+        }
+
+        .chat-box {
+            width: 80%;
+            max-width: 800px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow-y: auto;
+            height: 400px;
+        }
+
+        .chat-box h1 {
+            font-size: 28px;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .chat-message p {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            margin: 0;
+            max-width: 80%;
+        }
+
+        .user-message p {
+            background: #4a90e2;
+            color: #ffffff;
+            align-self: flex-end;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .input-container button {
+            background-color: #4a90e2;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .input-container button:hover {
+            background-color: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>fruit.ai</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="chat.html">Chat</a>
+        <a href="translator.html">Translator</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+    </nav>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="chat-message">
+                <p>Welcome! How can I assist you today?</p>
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const chatBox = document.getElementById('chat-box');
+            const message = input.value.trim();
+
+            if (message) {
+                // Display user message
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user-message';
+                userMessage.innerHTML = `<p>${message}</p>`;
+                chatBox.appendChild(userMessage);
+
+                // Clear input
+                input.value = '';
+
+                // Scroll to bottom
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Simulate bot response
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'chat-message';
+                    botMessage.innerHTML = `<p>I'm here to help! You said: "${message}"</p>`;
+                    chatBox.appendChild(botMessage);
+
+                    // Scroll to bottom
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
